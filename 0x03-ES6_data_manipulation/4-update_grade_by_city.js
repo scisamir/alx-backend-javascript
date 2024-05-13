@@ -4,15 +4,15 @@ export default function updateStudentGradeByCity(arr, city, newGds) {
 
     for (let i = 0; i < newGds.length; i += 1) {
       if (item.id === newGds[i].studentId) {
-        item = { ...item, grade: newGds[i].grade };
+        const modifiedItem = { ...item, grade: newGds[i].grade };
         gradeCheck = 1;
         break;
       }
       if (gradeCheck === 0 && (i + 1 === newGds.length)) {
-        item = { ...item, grade: 'N/A' };
+        const modifiedItem = { ...item, grade: 'N/A' };
       }
     }
 
-    return item;
+    return modifiedItem;
   }).filter((item) => item.location === city);
 }
