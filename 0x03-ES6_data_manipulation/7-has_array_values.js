@@ -6,7 +6,6 @@ export default function hasValuesFromArray(theSet, anArr) {
     if (hasArr === false) {
       return;
     }
-    return hasArr;
   });
 
   return hasArr;
