@@ -1,10 +1,16 @@
 export default function cleanSet(set, startString) {
+  if (typeof startString !== 'string') {
+    return '';
+  }
+
   let resStr = '';
 
   set.forEach((val) => {
-    if (val.startsWith(startString) && startString !== '') {
-      const subStr = val.substring(startString.length);
-      resStr += `${subStr}-`;
+    if (val !== undefined) {
+      if (val.startsWith(startString) && startString !== '') {
+        const subStr = val.substring(startString.length);
+        resStr += `${subStr}-`;
+      }
     }
   });
 
