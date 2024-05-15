@@ -14,4 +14,5 @@ export function queryAPI(arg) {
   }
 
   weakMap.set(arg, nQueries);
+  return weakMap.get(arg);
 }
